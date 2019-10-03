@@ -20,6 +20,13 @@ class Arn(object):
         self.resource_type = resource_type
         self.resource = resource
 
+    def __str__(self):
+        if self.resource_type is None:
+            rtype_part  = ""
+        else:
+            rtype_part  = self.resource_type + "/"
+        return "arn:" + ":".join(["" if x is None else x for x in [self.partition, self.service, self.region, self.account_id]]) + ":" + rtype_part + self.resource 
+
 
 def arnparse(arn_str):
     if not arn_str.startswith('arn:'):

@@ -30,3 +30,8 @@ var/
 # tests artifacts
 .cache
 .pytest_cache
+
+# editor files
+*~
+.#*
+\#*#

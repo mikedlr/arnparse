@@ -15,3 +15,6 @@ publish-test: clean build
 
 publish: clean build
 	@twine upload --repository pypi dist/*
+
+test:
+	python -m nose
